@@ -3,14 +3,17 @@ let noteForm = document.querySelector('.note-form');
 let noteTable = document.querySelector('.note-table')
 let cancel = document.querySelector('.cancel-btn')
 
-let noteList = [];
 let noteDeleteButtons;
+let noteList = JSON.parse(localStorage.getItem('notes'));
+if(noteList !== null){
+    appendNotes()
+}
 
 noteForm.addEventListener('submit', (e)=>{
     addNote(e);
 });
 
-function getDeletButtons(){
+function getDeleteButtons(){
     noteDeleteButtons = Array.from(document.querySelectorAll('.delete-item'));
 
     noteDeleteButtons.forEach(button =>{
@@ -71,8 +74,10 @@ function appendNotes(){
 
         //Append tr to table
         noteTable.appendChild(tr);
-        getDeletButtons();
+        getDeleteButtons();
+        localStorage.setItem('notes', JSON.stringify(noteList));
     })
+
 }
 
 function deleteNote(noteTitle){
@@ -81,5 +86,6 @@ function deleteNote(noteTitle){
             noteList.splice(i, 1);
         }
     }
+    localStorage.setItem('notes', JSON.stringify(noteList));
     appendNotes();
 }
