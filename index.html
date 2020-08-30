@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note List</title>
+</head>
+<body>
+    <!-- Trigger/Open The Modal -->
+<div class="add-note">
+    <a class="add-note" href="#myModal">Add Note</a>
+</div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <h1 class="header">Add Note</h1>
+            <form class="note-form" action="">
+                <label for="">Title</label></br>
+                <input class="title" type="text" name="" id=""></br>
+                <label for="">Note</label></br>
+                <input class="note" type="text"></br>
+                <input class="submit" type="submit">
+                <div class="cancel">
+                    <a class="cancel-btn" href="#close">Cancel</a>
+                </div>
+            </form>
+        
+           
+        </div>
+    </div>
+
+    <table class="note-table">
+        <tr>
+            <td class="header">Title</th>
+            <td class="header">Note</th>
+        </tr>
+    </table>
+
+
+    <script src="app.js"></script>
+</body>
+</html>
